@@ -6,6 +6,9 @@ import javafx.scene.paint.Color;
 
 public class Player extends Entity {
 
+    /*
+
+     */
     public Player(Vector2 coords) {
         super(coords, null);
     }

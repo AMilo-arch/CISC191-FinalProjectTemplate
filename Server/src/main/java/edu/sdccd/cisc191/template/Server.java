@@ -17,7 +17,9 @@ import java.io.IOException;
 
 public class Server extends Application implements PlayerMovementEvent, GameOverEvent {
 
+/*
 
+ */
 
     private Pane _root = new Pane();
     private Vector2 _tileSize = new Vector2(100,100);

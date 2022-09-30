@@ -12,9 +12,11 @@ import java.util.List;
 
 public class GameManager {
 
-    // It's common practice to put an underscore before the name of a private variable.
+    /*
 
-    // First array, Tile, the first bracket will be our x = rows, the second will be our y = columns.
+     */
+
+
     private Tile[][] _map;
     private Player _player;
     private List<PlayerMovementEvent> _listeners = new ArrayList<PlayerMovementEvent>();

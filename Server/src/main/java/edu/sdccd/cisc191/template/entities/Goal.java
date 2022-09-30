@@ -5,6 +5,9 @@ import javafx.scene.paint.Color;
 
 public class Goal extends Entity {
 
+    /*
+
+     */
     public Goal(Vector2 coords) {
         super(coords, null);
     }

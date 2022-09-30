@@ -6,6 +6,9 @@ import javafx.scene.paint.Color;
 
 public class Guard extends Entity {
 
+    /*
+
+     */
 
     public Guard(Vector2 coords) {
         super(coords, null);

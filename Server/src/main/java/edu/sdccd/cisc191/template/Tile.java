@@ -4,7 +4,9 @@ import edu.sdccd.cisc191.template.entities.Entity;
 import javafx.scene.image.Image;
 
 public class Tile {
+/*
 
+ */
     public Vector2 coords;
     public Sprite sprite;
     public Entity currentEntity;

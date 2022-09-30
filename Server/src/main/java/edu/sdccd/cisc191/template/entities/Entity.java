@@ -6,7 +6,9 @@ import javafx.scene.paint.Color;
 
 
 public abstract class Entity {
+/*
 
+ */
     public Vector2 coords;
     protected Image _image;
 

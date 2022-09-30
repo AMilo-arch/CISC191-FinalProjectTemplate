@@ -5,6 +5,9 @@ import javafx.scene.paint.Color;
 
 public class Wall extends Entity {
 
+    /*
+
+     */
     public Wall(Vector2 coords) {
         super(coords, null);
     }

@@ -10,7 +10,9 @@ import java.io.Console;
 
 public class Sprite extends Rectangle {
 
+/*
 
+ */
 
     private ImageView _imageView;
     private Pane _pane;
