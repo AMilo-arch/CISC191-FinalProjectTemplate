@@ -5,18 +5,23 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
-
 import java.io.Console;
 
-public class Sprite extends Rectangle {
-
-/*
-
+/**
+ * Sets up the visuals for what will appear on a tile. *
  */
+
+public class Sprite extends Rectangle {
 
     private ImageView _imageView;
     private Pane _pane;
 
+    // properties to get/set variables.
+    public ImageView getimageView(){return _imageView;}
+    public Pane getStackPane(){return _pane;}
+    public void setImage(Image image){_imageView.setImage(image);}
+
+    // constructor - setting up the pane and image view.
     public Sprite(Image image, double width, double height, double x, double y, double tileSizeX, double tileSizeY){
 
         super(x, y, tileSizeX, tileSizeY);
@@ -31,29 +36,13 @@ public class Sprite extends Rectangle {
             System.out.println(x + " | " + y);
 
         }
-
         _imageView.setFitWidth(width);
         _imageView.setFitHeight(height);
         _pane = new Pane();
         _pane.getChildren().add(_imageView);
         _pane.getChildren().add(this);
-
-        // _imageView.toFront();
-
-
     }
 
-    public ImageView getimageView(){
-        return _imageView;
-    }
-    public Pane getStackPane(){
-        return _pane;
-    }
 
-    public void setImage(Image image){
-
-        _imageView.setImage(image);
-
-    }
 
 }

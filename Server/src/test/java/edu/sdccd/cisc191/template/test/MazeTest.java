@@ -6,14 +6,12 @@ import edu.sdccd.cisc191.template.enums.MovementDirection;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
-
 import java.util.concurrent.atomic.AtomicBoolean;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
-/*
-
+/**
+ * Checks to see if the major functions are working properly.
  */
 
 
