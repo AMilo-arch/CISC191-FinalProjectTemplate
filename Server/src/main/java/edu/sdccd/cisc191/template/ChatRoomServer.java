@@ -18,7 +18,7 @@ public class ChatRoomServer {
 		this._port = port;
 		clientList = new ArrayList<ClientThread>();
 	}
-
+	// opens a thread allows clients to connect to server
 	public void start() {
 		_keepGoing = true;
 		isServerRunning = false;
@@ -30,7 +30,7 @@ public class ChatRoomServer {
 		String message = msg + "\n";
 		// print in server
 		System.out.println(message);
-		// we loop in reverse order in case we would have to remove a Client due to
+		// loop in reverse order in case we have to remove a Client due to
 		// disconnection
 		for (int i = clientList.size(); --i >= 0;) {
 			ClientThread ct = clientList.get(i);
@@ -42,9 +42,7 @@ public class ChatRoomServer {
 	}
 
 	public void AddClient(ServerSocket serverSocket, ChatRoomServer server) {
-
 		try {
-
 			// format message saying we are waiting
 			System.out.println("Server waiting for Clients on port " + _port + ".");
 			Socket socket = serverSocket.accept();
@@ -79,6 +77,22 @@ public class ChatRoomServer {
 				}
 				isServerRunning = false;
 				serverSocket.close();
+			} catch (IOException e) {
+				System.out.println("Exception on new ServerSocket: " + e + "\n");
+				return;
+			}
+		}
+		public void AddClient(ServerSocket serverSocket, ChatRoomServer server) {
+			try {
+
+				// format message saying we are waiting
+				System.out.println("Server waiting for Clients on port " + _port + ".");
+				Socket socket = serverSocket.accept();
+				System.out.println("Client connected");
+				// creates thread for new client and adds them to arraylist
+				ClientThread t = new ClientThread(socket, server);
+				clientList.add(t);
+				t.start();
 			} catch (IOException e) {
 				System.out.println("Exception on new ServerSocket: " + e + "\n");
 				return;

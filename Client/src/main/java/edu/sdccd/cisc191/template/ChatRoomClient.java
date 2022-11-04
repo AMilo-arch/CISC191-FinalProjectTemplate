@@ -90,9 +90,9 @@ public class ChatRoomClient extends Application implements IMessageRecievedCallb
 		sendMessageHandler(sendMessageBtn, chatMessage);
 		// creates the Thread to listen from the server
 		new ClientServerListenerThread(this, inputStream, _socket).start();
-	}// end start
+	}
 
-	// method for submit name button
+	// method for send message button
 	public void sendMessageHandler(Button sendMessageBtn, TextField chatMessage) {
 		// on click the send button in the chat room sends message to the server
 		sendMessageBtn.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
@@ -110,7 +110,7 @@ public class ChatRoomClient extends Application implements IMessageRecievedCallb
 			}
 		});
 
-		// if enter is pressed in the textfield it sends the message also
+		// if enter is pressed it sends the message also
 		chatMessage.setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
 			public void handle(KeyEvent keyEvent) {
@@ -159,22 +159,14 @@ public class ChatRoomClient extends Application implements IMessageRecievedCallb
 		chatRoom.positionCaret(chatRoom.getText().length() - 1);
 	}
 
+	// interface
 	@Override
 	public void OnMessageRecieved(String message) {
 		String msg = AppendMessageToGui(message.chars().mapToObj(e -> (char) e).collect(Collectors.toList()));
 		append(msg);
 	}
 
-	/**
-	 * Recursive function.
-	 * Why?
-	 * Boss man gets what boss man wants.
-	 * 
-	 * Things you can do with this, add special effects to reverse all text,
-	 * capitalize every other character, or auto convert text to hex
-	 * 
-	 * @return
-	 */
+
 	public String AppendMessageToGui(List<Character> message) {
 		int index = 0;
 		Character character = message.get(index);

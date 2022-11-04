@@ -24,7 +24,7 @@ public class ClientThread extends Thread {
         try {
             _inputStream = new ObjectInputStream(socket.getInputStream());
             _outputStream = new ObjectOutputStream(socket.getOutputStream());
-            // recieve username from stream
+            // receive username from stream
             _username = (String) _inputStream.readObject();
             _server.broadcast(_username + " has joined the chat.");
             System.out.println(_username + " just connected.");
